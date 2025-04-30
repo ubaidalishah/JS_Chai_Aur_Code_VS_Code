@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event-Propagation</title>
+  </head>
+  <style>
+    .items {
+      color: rgb(0, 0, 0);
+      width: 200px;
+      height: 200px;
+      margin: 10px;
+      cursor: pointer;
+    }
+    #first {
+      background-color: aqua;
+    }
+    #second {
+      background-color: brown;
+    }
+    #third {
+      background-color: yellow;
+    }
+    ul {
+      background-color: rgb(125, 189, 61);
+      /* margin: 5%; */
+      padding-left: 35%;
+    }
+    #result {
+      width: 100%;
+      height: 100px;
+      background-color: aliceblue;
+    }
+  </style>
+  <body style="background-color: #212121">
+    <div id="result"></div>
+    <ul>
+      <li id="first" class="items">first item</li>
+      <li id="second" class="items">second item</li>
+      <li id="third" class="items">third item</li>
+    </ul>
+    <script src="events.js"></script>
+  </body>
+</html>

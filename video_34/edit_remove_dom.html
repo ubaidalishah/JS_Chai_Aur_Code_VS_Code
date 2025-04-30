@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+  <body style="background-color: #212121; color: #ffff">
+    <ul class="p-language">
+      <li>javascript</li>
+    </ul>
+  </body>
+  <script>
+    // creating a function which add a list item to ul
+    function adding_list_item(language_name) {
+      const li = document.createElement("li");
+      li.innerText = language_name;
+      document.querySelector(".p-language").appendChild(li);
+    }
+    adding_list_item("python");
+    adding_list_item("c++");
+    adding_list_item("java");
+    // doing the above in optimized way
+    function adding_list_item_opti(language_name) {
+      const li = document.createElement("li");
+      li.appendChild(document.createTextNode(language_name));
+      document.querySelector(".p-language").appendChild(li);
+    }
+    adding_list_item_opti("go-lang");
+// edit 
+const second_language = document.querySelector('li:nth-child(2)');
+// second_language.innerHTML = 'TypeScript'
+const new_li = document.createElement('li')
+// new_li.textContent = 'Typescript'
+new_li.appendChild(document.createTextNode('Typerscirpt'))
+second_language.replaceWith(new_li)
+// edit 
+const first_language = document.querySelector('li:first-child');
+first_language.outerHTML = '<li>Mojo</li>' 
+// remove 
+const remove_language = document.querySelector('li:last-child');
+remove_language.remove() // go-lang is removed
+
+
+
+  </script>
+</html>

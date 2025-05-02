@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Hello World</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+  </body>
+  <script>
+    // const change_text = setTimeout(function () {
+    //   console.log("Bye World");
+    //   document.querySelector("h1").innerHTML = "Bye World";
+    // }, 2000);
+    // // stoping the settimeout
+    // document.querySelector("#stop").addEventListener("click", function () {
+    //   clearTimeout(change_text);
+    //   console.log("stoped");
+    // });
+    const say_date = function (str) {
+      console.log(str, Date.now());
+    };
+    let start_interval;
+    document.querySelector("#start").addEventListener("click", function () {
+      start_interval = setInterval(say_date, 1000, "hi");
+    });
+    document.querySelector("#stop").addEventListener("click", function () {
+      clearInterval(start_interval);
+      console.log("stoped");
+    });
+  </script>
+</html>

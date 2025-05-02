@@ -1,0 +1,47 @@
+<!-- Body Background-Color Changer Project -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color-Changer</title>
+  </head>
+  <body>
+    <h1>By clicking start the background color will change every second</h1>
+    <button style="cursor: pointer" id="start">Start</button>
+    <button style="cursor: pointer" id="stop">Stop</button>
+  </body>
+  <script>
+    const random_color = function () {
+      const hex = "0123456789ABCDEF";
+      let color = "#";
+      for (let i = 0; i < 6; i++) {
+        color += hex[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    };
+
+    let interval_id;
+    function start_changing_color() {
+        if(!interval_id){
+            interval_id = setInterval(changing_color, 1000);
+            // have to check when if condition is not there and press on start button twice why the stop button don't work then
+        }
+     
+      function changing_color() {
+        document.body.style.backgroundColor = random_color();
+      }
+    }
+    function stop_chaning_color() {
+      clearInterval(interval_id);
+      interval_id = null;
+    }
+    document
+      .querySelector("#start")
+      .addEventListener("click", start_changing_color);
+    document
+      .querySelector("#stop")
+      .addEventListener("click", stop_chaning_color);
+  </script>
+</html>
